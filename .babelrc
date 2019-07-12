@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    //避免编译输出重复-在无法准确控制代码运行得环境用-库
+    ["@babel/plugin-transform-runtime"],
+    //为了兼容class
+    ["babel/plugin-proposal-decorators", {"legacy": true}],
+    //按需加载antd
+    ["import", {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": true
+      }, "antd"
+    ],
+  ],
+  //引入这两个预设为了兼容jsx  后者默认把所有代码转成2015
+  "presets": ["@babel/preset-react", "@babel/preset-env"]
+}
