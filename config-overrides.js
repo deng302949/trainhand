@@ -28,7 +28,6 @@ let addLoader = () => config => {
     ]
   };
   config.module.rules = [...config.module.rules, ...modules.rules]
-  console.log(config, '------------------------------>1234568');
   return config;
 }
 
