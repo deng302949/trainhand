@@ -22,17 +22,17 @@ let addLoader = () => config => {
   let modules = {
     rules: [
       {
-        test: /\.(txt | md)$/,
-        use: 'raw-loader'
+        test: /\.(txt|md)$/,
+        loader: require.resolve('raw-loader'),
       }
     ]
   };
-  config.module.rules = [...config.module.rules, ...modules.rules]
+  config.module.rules = [...(config.module.rules), ...(modules.rules)]
   return config;
 }
 
 module.exports = override(
-  useBabelRc(),
+  // useBabelRc(),
   addPostcssPlugins(postcssPlugins),
   addLoader(),
 )
