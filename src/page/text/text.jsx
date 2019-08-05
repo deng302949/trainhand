@@ -1,11 +1,7 @@
 import React, { Fragment, useEffect, useMemo } from 'react';
 import Markdown from 'markdown-to-jsx';
 import hljs from 'highlight.js';
-import textMd from './text.md';
-import Remarkable from 'remarkable';
-let md = new Remarkable();
-
-const img = require('../../asset/files/abc.jpg.jpg');
+import textMd from '../../asset/files/text.md';
 
 let Text = () => {
   
@@ -15,17 +11,15 @@ let Text = () => {
     });
   });
 
-  // const md = useMemo(() => {
-  //   return textMd
-  // }, []);
+  const md = useMemo(() => {
+    return textMd
+  }, []);
 
   return (
     <Fragment>
       <div style={{ color: 'red' }}>{'md'}</div>
-      {/* <img src={img}></img> */}
-      {console.log(textMd, '--------->123456')}
       <Markdown>
-        {textMd}
+        {md}
       </Markdown>
     </Fragment>
   );
