@@ -1,0 +1,25 @@
+.xl-sidermenu {
+  width: 10px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+}
+
+.xl-sider-content {
+  position: absolute;
+  transform: translateX(-200px);
+  height: 450px;
+  width: 110px;
+  transition: all 1s;
+}
+
+.xl-sidermenu:hover .xl-sider-content {
+  transform: translateX(0px);
+}
+
+.xl-svg-icon {
+  height: 50px;
+  width: 40px;
+}

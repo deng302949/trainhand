@@ -18,21 +18,24 @@ const postcssPlugins = [
   px2rem({ remUnit: 16 }),
 ];
 
-let addLoader = () => config => {
-  let modules = {
-    rules: [
-      {
-        test: /\.(txt|md)$/,
-        loader: require.resolve('raw-loader'),
-      },
-    ]
-  };
-  config.module = { ...config.module, ...modules }
-  return config;
-}
+// let addLoader = () => config => {
+//   let modules = {
+//     rules: [
+//       {
+//         test: /\.(txt|md)$/,
+//         loader: require.resolve('raw-loader'),
+//       },
+//     ]
+//   };
+//   config.module = { ...config.module, ...modules }
+//   return config;
+// }
 
 module.exports = override(
-  addLoader(),
+  addLessLoader({
+    modifyVars,
+    javascriptEnabled: true
+  }),
   // useBabelRc(),
   addPostcssPlugins(postcssPlugins),
 )

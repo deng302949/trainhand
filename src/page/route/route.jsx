@@ -1,39 +1,34 @@
 import React from 'react';
-import NotFound from '../notFount/notFount';
-
-import {
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom';
-
-import * as content from '../content';
-
-const renderRoute = (route) => {
-  const props = {
-    key: route.key,
-    exact: route.exact,
-    path: route.path,
-  };
-
-  if (route.redirect) {
-    props.render = () => <Redirect to={route.redirect} />;
-  } else {
-    props.component = content[route.component];
-  }
-  return <Route {...props} />
-};
+import { NotFount } from '../content/index';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import * as components from '../content/index';
+import { routes } from '../../const/routeConfig';
 
 export default (props) => {
+  const renderRoute = (route) => {
+    const routeList = {
+      key: route.path,
+      exact: route.exact,
+      path: route.path,
+    };
+
+    if ( route.redirect ) { //从定向
+      routeList.render = () => <Redirect to={route.redirect} />
+    } else {
+      routeList.component = components[route.component];
+    };
+    
+    return <Route {...routeList} />;
+  };
+  
   return (
     <Switch>
       {
-        props.routerList ? props.routerList.map(route => (
+        routes ? routes.map(route => (
           renderRoute(route)
         )) : null
       }
-      <Route component={NotFound} />
+      <Route component={NotFount} />
     </Switch>
   );
-};
-
+}

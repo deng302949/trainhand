@@ -336,6 +336,7 @@ module.exports = function(webpackEnv) {
               test: /\.(txt|md)$/,
               loader: require.resolve('raw-loader'),
             },
+
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
@@ -366,6 +367,31 @@ module.exports = function(webpackEnv) {
                 cacheCompression: isEnvProduction,
                 compact: isEnvProduction,
               },
+            },
+            //less配置
+            {
+              test: /\.less$/,
+              use: [
+                "style-loader",
+                "css-loader",
+                "postcss-loader",
+                {
+                  loader: "less-loader",
+                  options: {
+                    javascriptEnabled: true,
+                  },
+                },
+              ],
+            },
+            //配置eslint
+            {
+              test: /\.jsx?$/,
+              use: [
+                {
+                  loader: 'eslint-loader',
+                }
+              ],
+              exclude: /node_modules/,
             },
             // Process any JS outside of the app with Babel.
             // Unlike the application JS, we only compile the standard ES features.

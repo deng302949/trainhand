@@ -1,32 +1,33 @@
-// import React from 'react';
-// import { SiderMenu } from '@1msoft/kant-ui';
-// import dataSource from '../../asset/files/routeData';
+import React from 'react';
+import './index.less';
+import { routes } from '../../const/routeConfig';
 
-// const Sidermenu = () => {
-  
-//   const tree = () => {
-//     const routeList = [];
-//     Object.keys(dataSource).forEach((routeKey) => {
-//       const route = { [routeKey] : dataSource[routeKey] };
-//       routeList.push(route);
-//     });
-//     return routeList;
-//   }
-
-//   const checkDate = (data) => {
-//     const arr = [];
-//     data.forEach((item, index) => {
-//       return 
-//     })
-//   }
-
-//   return (
-//     <SiderMenu
-//       // dataSource={[]}
-//     >
-//       {console.log(tree(), '0000000000000000000000>1234')}
-//     </SiderMenu>
-//   );
-// }
-
-// export default Sidermenu;
+export default (props) => {
+  const style = {
+    width: '50px',
+    height: '50px',
+    textAlign: 'center',
+    lineHeight: '50px',
+    position: 'absolute',
+  }
+  const renderSiderMenu = (routes) => {
+    let element = routes && routes.map((item, index) => {
+      return <div className={`xl-sider-${index} xl-sider-all`} style={{...style, ...{left: `${index * 8}px`
+        , top: `${index * 51}px`}}} key={index}>
+          <svg className={`icon xl-svg-icon`} aria-hidden="true"
+            onClick={() => {props.history.push(item.path)}}
+          >
+            <use xlinkHref={`#icon-${item.icon}`}></use>
+          </svg>
+      </div>
+    })
+    return element;
+  }
+  return (
+    <div className="xl-sidermenu">
+      <div className="xl-sider-content">
+        {renderSiderMenu(routes)}
+      </div>
+    </div>
+  );
+}

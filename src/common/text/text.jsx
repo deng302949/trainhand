@@ -1,23 +1,20 @@
 import React, { Fragment, useEffect, useMemo } from 'react';
 import Markdown from 'markdown-to-jsx';
 import hljs from 'highlight.js';
-import textMd from '../../asset/files/text.md';
 
-let Text = () => {
-  
+let Text = (props) => {
   useEffect(() => {
     document.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });
   });
 
-  const md = useMemo(() => {
-    return textMd
-  }, []);
+  let md = useMemo(() => (
+    require(`../../asset${props.path}`).default
+  ), [props.path]);
 
   return (
     <Fragment>
-      <div style={{ color: 'red' }}>{'md'}</div>
       <Markdown>
         {md}
       </Markdown>

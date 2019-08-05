@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './page';
 import * as serviceWorker from './serviceWorker';
+import './asset/style/style.less'; 
+import './asset/iconfont/iconfont.css';
+import './asset/iconfont/iconfont.js';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
