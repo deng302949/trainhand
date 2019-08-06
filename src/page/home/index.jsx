@@ -23,8 +23,9 @@ const Home = (props) => {
     })
     return renderImgList;
   } 
+  // 大哥啊，你这瞅瞅的轮播把内容遮住了啊
   return (
-    <div className="xl-banner">
+    <div className="xl-banner" style={{ display: 'none' }}>
       <Carousel 
         className="xl-content"
         autoplay={true}

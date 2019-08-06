@@ -10,8 +10,9 @@ let Text = (props) => {
   });
   console.log(props, '-------------->12345');
   let md = useMemo(() => (
-    props.path ?
-    require(`../../asset${props.path}`).default : ''
+    props.path ? 
+    require(`../../asset${props.path}`).default :
+    '## 大哥啊，报错都提示 `props.path` 等于 undefined 了'
   ), [props.path]);
   return (
     <Fragment>
