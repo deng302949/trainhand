@@ -9,30 +9,30 @@ export const routes = [
   },
   {
     text: 'CSS', path: '/css', parent: 'Root', icon: 'heifuwang',
-    component: 'Text', nav: true, exact: false, 
+    component: 'Css', nav: true, exact: false, 
   },
   {
     text: 'JAVASCRIPT', path: '/js', parent: 'Root', icon: 'sishi',
-    component: 'Text', nav: true, exact: false, 
+    component: 'Js', nav: true, exact: false, 
   },
   {
     text: '性能', path: '/performance', parent: 'Root', icon: 'bianfuxia',
-    component: 'Text', nav: true, exact: false, 
+    component: 'Xingneng', nav: true, exact: false, 
   },
   {
     text: 'WEBPACK', path: '/webpack', parent: 'Root', icon: 'yiren',
-    component: 'Text', nav: true, exact: false, 
+    component: 'Webpack', nav: true, exact: false, 
   },
   {
     text: 'BABEL', path: '/babel', parent: 'Root', icon: 'gangtiexia',
-    component: 'Text', nav: true, exact: false, 
+    component: 'Babel', nav: true, exact: false, 
   },
   {
     text: 'REACT', path: '/react', parent: 'Root', icon: 'zhizhuxia',
-    component: 'Text', nav: true, exact: false, 
+    component: 'React', nav: true, exact: false, 
   },
   {
     text: 'NODEJS', path: '/node', parent: 'Root', icon: 'meiguoduichang',
-    component: 'Text', nav: true, exact: false, 
+    component: 'Nodejs', nav: true, exact: false, 
   }
 ]

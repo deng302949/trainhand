@@ -8,7 +8,7 @@ export const markdownFiles = {
   css: [
     {
       name: 'BFC布局',
-      path: '/css/BFC.md',
+      path: '/css/BFC.MD',
     },
     {
       name: '水平垂直居中',

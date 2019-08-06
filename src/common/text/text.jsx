@@ -8,11 +8,11 @@ let Text = (props) => {
       hljs.highlightBlock(block);
     });
   });
-
+  console.log(props, '-------------->12345');
   let md = useMemo(() => (
-    require(`../../asset${props.path}`).default
+    props.path ?
+    require(`../../asset${props.path}`).default : ''
   ), [props.path]);
-
   return (
     <Fragment>
       <Markdown>
