@@ -10,7 +10,9 @@ let Text = (props) => {
   });
 
   let md = useMemo(() => (
-    require(`../../asset${props.path}`).default
+    props.path ? 
+    require(`../../asset${props.path}`).default :
+    '## 大哥啊，报错都提示 `props.path` 等于 undefined 了'
   ), [props.path]);
 
   return (
