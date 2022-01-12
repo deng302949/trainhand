@@ -92,7 +92,7 @@
     "customize-cra": "^0.2.14",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "markdown-it": "^9.0.0",
+    "markdown-it": "^12.3.2",
     "markdown-loader": "^5.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-px2rem": "^0.3.0",
